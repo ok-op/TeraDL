@@ -1,7 +1,7 @@
 // Global
 // const api = 'http://127.0.0.1:5000'; // Change This
-const api = 'https://teradl-api.dapuntaratya.com'; // Change This
-
+// const api = 'https://teradl-api.dapuntaratya.com'; // Change This
+const api = 'https://teraboxdownloaderonline.com';
 let buffer = '';
 let list_file;
 let params;
