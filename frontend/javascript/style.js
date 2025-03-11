@@ -15,11 +15,9 @@ document.getElementById('information-button-close').addEventListener('click', ()
 // Add Information
 
 const list_qna = [
-    {'question':'Apa itu TeraDL?', 'answer':'TeraDL adalah platform untuk streaming atau mengunduh file Terabox secara gratis dan cepat'},
-    {'question':'Bagaimana cara menggunakannya?', 'answer':'Cukup masukkan URL Terabox yang ingin kamu download, tekan submit, tunggu hingga muncul daftar file, kemudian pilih opsi Download atau Play Streaming'},
-    {'question':'Apa perbedaan download 1, 2, dan 3?', 'answer':'Opsi 1 adalah download URL dengan kecepatan pelan tapi pasti<div class="divisor-spacing"></div>Opsi 2 adalah download URL dengan kecepatan medium<div class="divisor-spacing"></div>Opsi 3 adalah download URL dengan kecepatan tinggi namun sering error'},
-    {'question':'Apakah platform ini resmi?', 'answer':'Platform ini dibuat secara mandiri dan tidak memiliki asosiasi dengan Terabox. Segala tindakan adalah tanggung jawab pengguna'},
-];
+    {'question':'What is TeraDL?', 'answer':'TeraDL is a platform for streaming or downloading Terabox files for free and fast'},
+    {'question':'How to use?', 'answer':'Simply enter the Terabox URL you want to download, press submit, wait for the file list to appear, then select the Download or Play Streaming option.'},
+    {'question':'What is the difference between download 1, 2, and 3?', 'answer':'Option 1 is downloading the URL with slow but steady speed<div class="divisor-spacing"></div>Option 2 is downloading the URL with medium speed<div class="divisor-spacing"></div>Option 3 is downloading the URL with high speed but often error'}, {'question':'Is this platform official?', 'answer':'This platform is made independently and has no association with Terabox. All actions are the responsibility of the user'}, ];
 
 function addInfo() {
     const box_info = document.getElementById('container-qna');
@@ -38,9 +36,9 @@ addInfo();
 // Add Contact
 
 const list_contact = [
-    {'href':'https://www.facebook.com/Dapunta.Khurayra.X', 'icon':'<i class="fa-brands fa-square-facebook"></i>', 'text':'Dapunta Khurayra X'},
-    {'href':'https://www.instagram.com/dapunta.ratya/#', 'icon':'<i class="fa-brands fa-square-instagram"></i>', 'text':'Dapunta Ratya'},
-    {'href':'https://github.com/dapunta', 'icon':'<i class="fa-brands fa-square-github"></i>', 'text':'Dapunta'},
+    {'href':'https://t.me/Opleech_WD', 'icon':'<i class="fa-brands fa-square-telegram"></i>', 'text':'WDZONE'},
+    {'href':'https://www.instagram.com/woodcraft.insta/#', 'icon':'<i class="fa-brands fa-square-instagram"></i>', 'text':'WOODcraft'},
+    {'href':'https://github.com/SudoR2spr', 'icon':'<i class="fa-brands fa-square-github"></i>', 'text':'SudoR2spr'},
 ];
 
 function AddContact() {
