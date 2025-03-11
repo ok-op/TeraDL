@@ -92,16 +92,20 @@ body {
 }
 
 footer {
-	position: fixed;
-	bottom: 10px;
-	width: 100%;
-	margin-left: 20px;
-        margin-right: 20px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 14px;
-	color: black;
-	border-radius: 100px;
-	border: 2px solid white;
-	box-shadow: 0 4px 8px rgba(10, 74, 64);
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px); /* স্ক্রিন সাইজ থেকে দুই পাশে 20px গ্যাপ রাখবে */
+    max-width: 1200px;  
+    padding: 10px 20px;  
+    box-sizing: border-box;  
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    border-radius: 100px;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(10, 74, 64, 0.2); /* Box-shadow ঠিক করা হয়েছে */
+    background: white; /* ব্যাকগ্রাউন্ড যোগ করা যাতে কনটেন্ট পরিষ্কার থাকে */
 }
