@@ -259,59 +259,90 @@ async function startDownload(url) {
 async function initStream(fs_id, dlink=null) {
     const expanded_box = document.getElementById(`file-${fs_id}`);
     const video_box = document.getElementById(`video-box-${fs_id}`);
-    if (expanded_box.className == 'container-item') {
-        const source_vid = document.getElementById(`video-box-${fs_id}`);
-        if (source_vid.innerHTML.replace(/\s/g, '') === '') {
 
+    if (!expanded_box || !video_box) {
+        console.error("❌ Error: Expanded box or video box not found!");
+        return;
+    }
+
+    if (expanded_box.className === 'container-item') {
+        const source_vid = document.getElementById(`video-box-${fs_id}`);
+        
+        console.log("🔍 Checking before loading video:", source_vid.innerHTML);
+        
+        if (source_vid.innerHTML.trim() === '') {
             loading3(`stream-${fs_id}`, true);
             const url_stream = await getURLStream(fs_id, dlink);
+            
+            if (!url_stream) {
+                console.error("❌ Error: Stream URL not generated!");
+                loading3(`stream-${fs_id}`, false);
+                return;
+            }
+
+            console.log("✅ Stream URL Generated:", url_stream);
+            
             source_vid.innerHTML = `
                 <video controls>
                     <source id="stream-video-${fs_id}" src="${url_stream}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>`;
+            
             loading3(`stream-${fs_id}`, false);
-
         }
+        
+        console.log("✅ Video box updated:", source_vid.innerHTML);
         expanded_box.className = 'container-item expand';
         video_box.className = 'container-item-expand';
-    }
-    else {
+    } else {
         expanded_box.className = 'container-item';
         video_box.className = 'container-item-expand false';
     }
 }
-
 // Get URL Stream
 async function getURLStream(fs_id, dlink=null) {
-
     let param;
 
     try {
-        if (dlink) {param = {'url':dlink, 'mode':mode};}
-        else {param = {...params, 'fs_id':fs_id, 'mode':mode};}
+        if (dlink) {
+            param = {'url': dlink, 'mode': mode};
+        } else {
+            param = {...params, 'fs_id': fs_id, 'mode': mode};
+        }
 
         const get_link_url = `${api}/generate_link`;
-        const headers = {'Content-Type':'application/json'};
+        const headers = {'Content-Type': 'application/json'};
         const data = {
-            'method'  : 'POST',
-            'mode'    : 'cors',
-            'headers' : headers,
-            'body'    : JSON.stringify(param)
+            method: 'POST',
+            mode: 'cors',
+            headers: headers,
+            body: JSON.stringify(param)
         };
 
+        console.log("🔄 Fetching stream URL from API:", get_link_url);
         const req = await fetch(get_link_url, data);
         const response = await req.json();
 
-        if (response.status == 'success') {
+        if (response.status === 'success') {
             const old_url = response['download_link']['url_2'];
+            if (!old_url) {
+                console.error("❌ Error: No valid stream URL in response!");
+                return '';
+            }
+
             const old_domain = old_url.match(/:\/\/(.*?)\./)[1];
             const stream_url = old_url.replace(old_domain, 'kul-ddata').replace('by=themis', 'by=dapunta');
-            return(stream_url);
+
+            console.log("✅ Final Stream URL:", stream_url);
+            return stream_url;
+        } else {
+            console.error("❌ Error: API response status failed!", response);
+            return '';
         }
-        else return('');
+    } catch (error) {
+        console.error("❌ Exception in getURLStream:", error);
+        return '';
     }
-    catch {return('');}
 }
 
 // Change status color
