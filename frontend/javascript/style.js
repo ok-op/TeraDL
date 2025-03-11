@@ -15,7 +15,7 @@ document.getElementById('information-button-close').addEventListener('click', ()
 // Add Information
 
 const list_qna = [
-    {'question':'What is TeraDL?', 'answer':'TeraDL is a platform for streaming or downloading Terabox files for free and fast'},
+    {'question':'What is TeraDownloadr?', 'answer':'TeraDownloadr is a platform for streaming or downloading Terabox files for free and fast'},
     {'question':'How to use?', 'answer':'Simply enter the Terabox URL you want to download, press submit, wait for the file list to appear, then select the Download or Play Streaming option.'},
     {'question':'What is the difference between download 1, 2, and 3?', 'answer':'Option 1 is downloading the URL with slow but steady speed<div class="divisor-spacing"></div>Option 2 is downloading the URL with medium speed<div class="divisor-spacing"></div>Option 3 is downloading the URL with high speed but often error'}, {'question':'Is this platform official?', 'answer':'This platform is made independently and has no association with Terabox. All actions are the responsibility of the user'}, ];
 
