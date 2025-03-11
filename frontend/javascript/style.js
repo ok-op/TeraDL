@@ -1,5 +1,5 @@
 // Version
-const version = 'Versi 1.4';
+const version = 'WOODcraft';
 document.getElementById('app-version').innerText = version;
 
 // Open Information Menu
@@ -36,7 +36,7 @@ addInfo();
 // Add Contact
 
 const list_contact = [
-    {'href':'https://t.me/Opleech_WD', 'icon':'<i class="fa-brands fa-square-telegram"></i>', 'text':'WDZONE'},
+    {'href':'https://t.me/Opleech_WD', 'icon':'<i class="fa-brands fa-telegram"></i>', 'text':'WDZONE'},
     {'href':'https://www.instagram.com/woodcraft.insta/#', 'icon':'<i class="fa-brands fa-square-instagram"></i>', 'text':'WOODcraft'},
     {'href':'https://github.com/SudoR2spr', 'icon':'<i class="fa-brands fa-square-github"></i>', 'text':'SudoR2spr'},
 ];
