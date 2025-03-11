@@ -55,7 +55,7 @@ body {
 }
 
 .spinner2 {
-    border: 2px solid #afb7f8;
+    border: 2px solid #e635e6;
     border-top: 2px solid #6c79df;
     border-radius: 50%;
     width: 100%;
@@ -66,8 +66,8 @@ body {
 }
 
 .spinner4 {
-    border: 2px solid #afb7f8;
-    border-top: 2px solid #6c79df;
+    border: 2px solid #9e1ad6;
+    border-top: 2px solid #3b0752;
     border-radius: 50%;
     width: 100%;
     height: 100%;
